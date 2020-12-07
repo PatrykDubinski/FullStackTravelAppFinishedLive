@@ -22,21 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use(cors());
-app.use(express.static(path.join(__dirname, "uploads")));
+// app.use(express.static(path.join(__dirname, "uploads")));
 app.use(express.static(path.join(__dirname, "client/build")));
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "*");
-//   res.header("Access-Control-Allow-Headers", "Content-Type");
-//   res.header(
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization, multipart/form-data, Access-Control-Allow-Origin"
-//   );
-//   if (req.method == "OPTIONS") {
-//     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-//     return res.status(200).json({});
-//   }
-//   next();
-// });
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -44,10 +31,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/auth", authRoutes);
 app.use("/marker", markerRoutes);
-
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
 
 app.use((req, res, next) => {
   const error = new Error("Not Found");
