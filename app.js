@@ -25,10 +25,6 @@ app.use(cors());
 // app.use(express.static(path.join(__dirname, "uploads")));
 app.use(express.static(path.join(__dirname, "apka/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/apka/build/index.html"));
-});
-
 app.use("/auth", authRoutes);
 app.use("/marker", markerRoutes);
 
@@ -43,6 +39,10 @@ app.use((error, req, res, next) => {
   res.json({
     message: error.message,
   });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/apka/build/index.html"));
 });
 
 module.exports = app;
