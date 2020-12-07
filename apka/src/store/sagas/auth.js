@@ -18,7 +18,7 @@ export function* registerSaga(action) {
     lastName: action.lastName,
   };
   try {
-    const response = yield axios.post("/app/auth/register", data);
+    const response = yield axios.post("/auth/register", data);
     yield put(actions.registerSuccess());
   } catch (error) {
     yield put(actions.registerFail(error.response.data.message));
@@ -40,7 +40,7 @@ export function* googleAuthSaga(action) {
       },
       "user"
     );
-    yield axios.post("/app/auth/google", {
+    yield axios.post("/auth/google", {
       email: data.email,
       nickname: data.name,
       firstName: data.given_name,
@@ -108,7 +108,7 @@ export function* logoutSaga(action) {
 }
 
 export function* getUserDataSaga(action) {
-  const response = yield axios.get(`/app/auth/getData/${action.userId}`);
+  const response = yield axios.get(`/auth/getData/${action.userId}`);
   try {
     yield put(actions.getUserDataSuccess(response.data.user));
   } catch (err) {
