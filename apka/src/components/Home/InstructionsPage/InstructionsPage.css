@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
+
+.instructionsPage {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 50px minmax(200px, 1fr);
+  grid-template-rows: repeat(5, minmax(70px, 120px));
+  padding: 20px 40px;
+  margin: 40px 0;
+}
+
+.instructionsPage__middle {
+  display: flex;
+  justify-content: center;
+  grid-row: 1 / 6;
+  grid-column: 2 / 3;
+}
+
+.instructionsPage__middle-line {
+  width: 5px;
+  border-radius: 999px;
+  height: 100%;
+  background-color: #4ea685;
+}
+
+.instructionsPage__step {
+  max-width: 350px;
+  min-width: 200px;
+  align-self: center;
+  border: 3px solid #6c63ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  position: relative;
+  font-family: "Overpass", sans-serif;
+}
+
+.instructionsPage__step.step-1 {
+  justify-self: end;
+}
+
+.instructionsPage__step.step-1 > p > a {
+  color: #4ea685;
+}
+
+.instructionsPage__step.step-1::after,
+.instructionsPage__step.step-3::after,
+.instructionsPage__step.step-5::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transform: translate(11px, -50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid green;
+}
+
+.instructionsPage__step.step-2::after,
+.instructionsPage__step.step-4::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transform: translate(-11px, -50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid green;
+}
+
+.instructionsPage__step.step-2 {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+
+.instructionsPage__step.step-3 {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  justify-self: end;
+}
+
+.instructionsPage__step.step-4 {
+  grid-row: 4 / 5;
+  grid-column: 3 / 4;
+}
+
+.instructionsPage__step.step-5 {
+  grid-row: 5 / 6;
+  grid-column: 1 / 2;
+  justify-self: end;
+}
+
+.cursive {
+  font-style: italic;
+  font-weight: bolder;
+}

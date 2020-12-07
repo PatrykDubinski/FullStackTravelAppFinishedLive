@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
+
+.greetings {
+  display: flex;
+  margin: 40px 0 0 0;
+  padding: 40px 30px;
+  background-color: #f1f1f1;
+  justify-content: center;
+}
+
+.greetings__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin-right: 35px;
+}
+
+.greetings__left > h1 {
+  font-family: "Lobster", cursive;
+  letter-spacing: 4px;
+  font-size: 1.7rem;
+}
+
+.greetings__left > p {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.greetings__left > h3 {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.greetings__right {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.greetings__right > img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}

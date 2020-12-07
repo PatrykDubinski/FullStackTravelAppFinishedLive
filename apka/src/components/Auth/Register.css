@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+/* font-family: "Lobster", cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
+/* font-family: "Overpass", sans-serif; */
+
+.register {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.register__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Overpass", sans-serif;
+  color: white;
+  flex: 1;
+  position: relative;
+}
+
+.register__left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%);
+  background-color: #388e3c;
+}
+
+.register__left > h1 {
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.register__left > p {
+  font-size: 1.1rem;
+  margin: 5px 0 20px 0;
+  color: #f1f1f1;
+}
+
+.register__left > button {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  color: #f1f1f1;
+  font-weight: 600;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline-width: 0;
+}
+
+.register__left > button:hover {
+  background-color: #699f6f;
+}
+
+.register__right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-family: "Overpass", sans-serif;
+  color: #28304c;
+}
+
+.register__right > h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.register__right > p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.login_with_google {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  height: 60px;
+  background-color: #467fe8;
+  border-radius: 8px;
+  color: white;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icon_wrapper {
+  background-color: #f7f7f7;
+  color: red;
+  height: 90%;
+  width: 25%;
+  margin-left: 3px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_wrapper > svg {
+  font-size: xx-large;
+}
+
+.login_with_google > p {
+  width: 70%;
+  text-align: center;
+  font-size: large;
+}

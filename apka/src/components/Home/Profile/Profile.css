@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
+
+.profile__top-profilePic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #f1f1f1;
+  z-index: 1;
+}
+
+.profile__top-profilePic > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile__top-username {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+}
+
+.profile__top-info-wrapper {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  color: #f1f1f1;
+  font-family: "Overpass", sans-serif;
+  z-index: 1;
+  max-width: 45%;
+}
+
+.profile__data {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 6px;
+  padding-top: 3px;
+}
+
+.profile__data::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  height: 1px;
+}
+
+.profile__bottom-nav {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #f1f1f1;
+  font-family: "Overpass", sans-serif;
+  border-bottom: 0.01rem solid rgba(241, 241, 241, 0.9);
+}
+
+.profile__bottom-nav-item {
+  background-color: #00695c;
+  flex: 0.5;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile__bottom-nav-item.active {
+  box-shadow: inset 0 -5px 1em rgba(241, 241, 241, 0.5);
+}
+
+.profile__bottom-nav-item:hover {
+  background-color: rgba(0, 105, 92, 0.8);
+}
+
+.profile__bottom-nav-item:first-of-type {
+  border-right: 1px solid rgba(241, 241, 241, 0.4);
+}
