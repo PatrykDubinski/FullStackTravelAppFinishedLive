@@ -157,4 +157,8 @@ router.get("/getData/:id", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+  res.status(200).send("Hello");
+});
+
 module.exports = router;
