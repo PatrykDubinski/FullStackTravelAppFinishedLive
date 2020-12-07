@@ -25,9 +25,9 @@ app.use(cors());
 // app.use(express.static(path.join(__dirname, "uploads")));
 app.use(express.static(path.join(__dirname, "client/build")));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 app.use("/auth", authRoutes);
 app.use("/marker", markerRoutes);
@@ -43,10 +43,6 @@ app.use((error, req, res, next) => {
   res.json({
     message: error.message,
   });
-});
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 module.exports = app;
