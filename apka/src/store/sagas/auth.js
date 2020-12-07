@@ -18,7 +18,10 @@ export function* registerSaga(action) {
     lastName: action.lastName,
   };
   try {
-    const response = yield axios.post("/auth/register", data);
+    const response = yield axios.post(
+      "https://peaceful-garden-40839.herokuapp.com/auth/register",
+      data
+    );
     yield put(actions.registerSuccess());
   } catch (error) {
     yield put(actions.registerFail(error.response.data.message));
@@ -40,14 +43,17 @@ export function* googleAuthSaga(action) {
       },
       "user"
     );
-    yield axios.post("/auth/google", {
-      email: data.email,
-      nickname: data.name,
-      firstName: data.given_name,
-      lastName: data.family_name,
-      userId: data.id,
-      picture: data.picture,
-    });
+    yield axios.post(
+      "https://peaceful-garden-40839.herokuapp.com/auth/google",
+      {
+        email: data.email,
+        nickname: data.name,
+        firstName: data.given_name,
+        lastName: data.family_name,
+        userId: data.id,
+        picture: data.picture,
+      }
+    );
     yield put(actions.loginSuccess(token, data.id));
     yield put(actions.googleAuthSuccess(token, data));
   } catch (err) {
@@ -62,7 +68,10 @@ export function* loginSaga(action) {
     password: action.password,
   };
   try {
-    const response = yield axios.post("/auth/login", data);
+    const response = yield axios.post(
+      "https://peaceful-garden-40839.herokuapp.com/auth/login",
+      data
+    );
     const expDateInMs = response.data.expiration * 1000;
     yield saveToLocalStorage(
       {
@@ -108,7 +117,9 @@ export function* logoutSaga(action) {
 }
 
 export function* getUserDataSaga(action) {
-  const response = yield axios.get(`/auth/getData/${action.userId}`);
+  const response = yield axios.get(
+    `https://peaceful-garden-40839.herokuapp.com/auth/getData/${action.userId}`
+  );
   try {
     yield put(actions.getUserDataSuccess(response.data.user));
   } catch (err) {
