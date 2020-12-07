@@ -23,10 +23,10 @@ app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use(cors());
 // app.use(express.static(path.join(__dirname, "uploads")));
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "apka/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/apka/build/index.html"));
 });
 
 app.use("/auth", authRoutes);
