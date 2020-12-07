@@ -6,31 +6,28 @@ import { arrayBufferToBase64 } from "..";
 export function* updateMarkerSaga(action) {
   yield put(actions.updateMarkerStart());
   try {
-    const response = yield axios.patch(
-      `http://localhost:8000/marker/${action.markerId}`,
-      [
-        {
-          propName: "title",
-          value: action.title,
-        },
-        {
-          propName: "desc",
-          value: action.desc,
-        },
-        {
-          propName: "startDate",
-          value: action.startDate,
-        },
-        {
-          propName: "endDate",
-          value: action.endDate,
-        },
-        {
-          propName: "rating",
-          value: action.rating,
-        },
-      ]
-    );
+    const response = yield axios.patch(`/marker/${action.markerId}`, [
+      {
+        propName: "title",
+        value: action.title,
+      },
+      {
+        propName: "desc",
+        value: action.desc,
+      },
+      {
+        propName: "startDate",
+        value: action.startDate,
+      },
+      {
+        propName: "endDate",
+        value: action.endDate,
+      },
+      {
+        propName: "rating",
+        value: action.rating,
+      },
+    ]);
     yield put(actions.updateMarkerSuccess());
   } catch (err) {
     yield put(actions.updateMarkerFail(err));
@@ -40,9 +37,7 @@ export function* updateMarkerSaga(action) {
 export function* getMarkerDetails(action) {
   yield put(actions.getMarkerDetailsStart());
   try {
-    const response = yield axios.get(
-      `http://localhost:8000/marker/${action.markerId}`
-    );
+    const response = yield axios.get(`/marker/${action.markerId}`);
     yield put(actions.getMarkerDetailsSuccess(response.data));
   } catch (err) {
     yield put(actions.getMarkerDetailsFail(err));
@@ -53,7 +48,7 @@ export function* deleteMarkerSaga(action) {
   yield put(actions.deleteMarkerStart());
   const markerId = action.markerId;
   try {
-    const response = yield axios.delete(`http://localhost:8000/marker/delete`, {
+    const response = yield axios.delete(`/marker/delete`, {
       data: {
         markerId,
       },
