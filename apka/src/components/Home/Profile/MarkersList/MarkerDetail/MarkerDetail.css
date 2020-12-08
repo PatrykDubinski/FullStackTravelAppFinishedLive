@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
 
 .markerDetails {
-  height: 100vh;
-  width: 100vw;
+  padding: 10px 0;
   background-color: #00695c;
   display: flex;
   justify-content: center;
@@ -46,7 +45,7 @@
   background-color: #f1f1f1;
 }
 
-.markerDetails__data > img {
+.markerDetails__data img {
   height: 200px;
   object-fit: cover;
 }
@@ -195,5 +194,25 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 700px) {
+  .markerDetails__data {
+    width: 60%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .markerDetails__data > span {
+    margin: 10px auto;
+  }
+
+  .img__wrapper {
+    height: 40%;
+  }
+
+  .img__wrapper > img {
+    height: 100%;
   }
 }

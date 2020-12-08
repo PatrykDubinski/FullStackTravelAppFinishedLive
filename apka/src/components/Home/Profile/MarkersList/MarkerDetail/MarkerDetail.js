@@ -142,7 +142,9 @@ const MarkerDetail = React.memo(
                 )}
               </>
             )}
-            <img src={myImage} />
+            <div className="img__wrapper">
+              <img src={myImage} />
+            </div>
             {isEditing ? (
               <button onClick={() => saveEdit()}>Save</button>
             ) : (

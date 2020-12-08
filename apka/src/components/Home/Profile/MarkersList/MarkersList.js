@@ -20,6 +20,7 @@ const MarkersList = ({
   }, [onGetMarkers, userId]);
 
   const deleteMarkerHandler = (e) => {
+    e.preventDefault();
     onDeleteMarker(e.target.id, userId);
     onGetMarkers(userId);
   };

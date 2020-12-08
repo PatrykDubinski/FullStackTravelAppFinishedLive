@@ -67,3 +67,10 @@
     right: 130%;
   }
 }
+
+@media (min-width: 300px) {
+  .preload h3 {
+    text-align: center;
+    top: 80%;
+  }
+}

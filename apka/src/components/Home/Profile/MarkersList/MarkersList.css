@@ -188,3 +188,35 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 300px) {
+  .markersList .marker {
+    grid-auto-rows: auto;
+    text-align: center;
+    grid-row-gap: 15px;
+    grid-template-columns: auto;
+  }
+
+  .markersList .marker img {
+    justify-self: center;
+  }
+
+  .MuiRating-root {
+    justify-self: center;
+  }
+
+  .marker__separator {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .markersList .marker {
+    grid-template-rows: 80px;
+    grid-template-columns: 100px 1fr 1fr 200px 50px 1fr 100px;
+  }
+
+  .marker__separator {
+    display: block;
+  }
+}
