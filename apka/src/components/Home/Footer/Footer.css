@@ -9,3 +9,33 @@
 .footer > p {
   color: #f1f1f1;
 }
+
+@media (min-width: 300px) {
+  .footer {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .footer {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .footer {
+    font-size: 1.5rem;
+  }
+}

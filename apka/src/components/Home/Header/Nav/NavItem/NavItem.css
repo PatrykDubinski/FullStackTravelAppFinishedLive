@@ -30,3 +30,9 @@
 .navItem:hover::after {
   transform: translateY(0);
 }
+
+@media (min-width: 1500px) {
+  .navItem {
+    font-size: 1.4rem;
+  }
+}

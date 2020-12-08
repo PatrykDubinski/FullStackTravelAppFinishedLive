@@ -46,3 +46,99 @@
   font-family: "Overpass", sans-serif;
   font-weight: 400;
 }
+
+@media (min-width: 300px) {
+  .homeInfoPage > h1 {
+    font-size: 1rem;
+  }
+
+  .homeInfoPage__wrapper {
+    flex-direction: column;
+  }
+
+  .homeInfoPage__left > svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .homeInfoPage__right {
+    text-align: center;
+    max-width: unset;
+  }
+
+  .homeInfoPage__right > h2 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+
+  .homeInfoPage__right > p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .homeInfoPage > h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .homeInfoPage > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .homeInfoPage__left > svg {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .homeInfoPage > h1 {
+    font-size: 3rem;
+  }
+
+  .homeInfoPage__right > h2 {
+    font-size: 1.7rem;
+  }
+
+  .homeInfoPage__right > p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .homeInfoPage__wrapper {
+    flex-direction: row;
+  }
+
+  .homeInfoPage__left > svg {
+    width: 400px;
+    height: 500px;
+  }
+
+  .homeInfoPage__right {
+    text-align: left;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .homeInfoPage__right > h1 {
+    font-size: 4.5rem;
+  }
+
+  .homeInfoPage__left > svg {
+    width: 700px;
+    height: 800px;
+  }
+
+  .homeInfoPage__right > h2 {
+    font-size: 2.4rem;
+  }
+
+  .homeInfoPage__right > p {
+    font-size: 1.5rem;
+  }
+}
