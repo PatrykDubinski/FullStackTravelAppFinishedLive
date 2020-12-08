@@ -1,5 +1,6 @@
 import React from "react";
 import "./InstructionsPage.css";
+import { Link } from "react-router-dom";
 
 const InstructionsPage = () => {
   return (
@@ -9,7 +10,7 @@ const InstructionsPage = () => {
           First you have to register your account to keep track of your travels.
           You can do it by clicking{" "}
           <span className="cursive">Authorization</span> on the top panel or
-          just by clicking <a href="/register">here</a>.
+          just by clicking <Link to="/register">here</Link>.
         </p>
       </div>
       <div className="instructionsPage__middle">
