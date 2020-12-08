@@ -219,3 +219,43 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-height: 300px) {
+  .addPointModal {
+    width: 85%;
+    top: 50%;
+  }
+
+  .addPointModal.open {
+    transform: translate(-50%, -50%);
+  }
+
+  .addPointModal > form > div {
+    margin-bottom: 0;
+    padding: 5px;
+  }
+
+  .addPointModal > h2 {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-height: 680px) {
+  .addPointModal {
+    top: 60%;
+    width: 30%;
+  }
+
+  .addPointModal.open {
+    transform: translate(-50%, -60%);
+  }
+
+  .addPointModal > form > div {
+    margin-bottom: 15px;
+    padding: 10px 5px;
+  }
+
+  .addPointModal > h2 {
+    margin-bottom: 15px;
+  }
+}
