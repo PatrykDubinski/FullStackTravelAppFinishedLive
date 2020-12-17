@@ -1,16 +1,18 @@
-import "./App.css";
+// Basic imports
+import { useEffect } from "react";
 
+// Library imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
+// My components imports
 import Home from "./components/Home/Home";
-import Register from "./components/Auth/Register";
-import Logout from "./components/Auth/Login/Logout/Logout";
-import * as actions from "./store/actions/index";
-import { useEffect } from "react";
-import Google from "./components/Auth/Google/Google";
 import Profile from "./components/Home/Profile/Profile";
 import MarkerDetail from "./components/Home/Profile/MarkersList/MarkerDetail/MarkerDetail";
+import Register from "./components/Auth/Register";
+import Logout from "./components/Auth/Login/Logout/Logout";
+import Google from "./components/Auth/Google/Google";
+import * as actions from "./store/actions/index";
 
 function App({ onTryAutoSignIn, isAuth, onGetUserData, userId }) {
   useEffect(() => {
@@ -47,6 +49,8 @@ function App({ onTryAutoSignIn, isAuth, onGetUserData, userId }) {
     </div>
   );
 }
+
+// Redux
 
 const mapStateToProps = (state) => {
   return {

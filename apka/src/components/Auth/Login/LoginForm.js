@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 import "./LoginForm.css";
+
+import { useHistory } from "react-router";
 import { connect } from "react-redux";
 
 import * as actions from "../../../store/actions/index";

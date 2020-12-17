@@ -1,11 +1,13 @@
+// Library imports
 import axios from "axios";
 import { call, put } from "redux-saga/effects";
+
+// My components imports
 import { loadFromLocalStorage, saveToLocalStorage } from "..";
 import {
   getAccessTokenFromCode,
   getGoogleDriveFiles,
 } from "../../components/Auth/Google/utilities/utilities";
-
 import * as actions from "../actions/index";
 
 export function* registerSaga(action) {
@@ -18,7 +20,7 @@ export function* registerSaga(action) {
     lastName: action.lastName,
   };
   try {
-    const response = yield axios.post("/auth/register", data);
+    yield axios.post("/auth/register", data);
     yield put(actions.registerSuccess());
   } catch (error) {
     yield put(actions.registerFail(error.response.data.message));
@@ -72,17 +74,7 @@ export function* loginSaga(action) {
       },
       "user"
     );
-    // yield localStorage.setItem("token", response.data.token);
-    // yield localStorage.setItem("userId", response.data.userId);
-    // yield localStorage.setItem("userEmail", response.data.userEmail); // tego chyba nie
-    // yield localStorage.setItem("expDate", expDateInMs);
-    yield put(
-      actions.loginSuccess(
-        response.data.token,
-        response.data.userId,
-        response.data.userEmail // tego tez nie
-      )
-    );
+    yield put(actions.loginSuccess(response.data.token, response.data.userId));
   } catch (error) {
     yield put(actions.loginFail(error.response.data.message));
   }
@@ -97,8 +89,7 @@ export function* checkLoginSaga(action) {
     if (expDate <= new Date().getTime()) {
       yield put(actions.logout());
     } else {
-      // const userEmail = localStorage.getItem("userEmail"); // tu tez
-      yield put(actions.loginSuccess(token, userId)); // tu tez
+      yield put(actions.loginSuccess(token, userId));
     }
   }
 }
@@ -115,5 +106,3 @@ export function* getUserDataSaga(action) {
     yield put(actions.getUserDataFail(err));
   }
 }
-
-// https://morning-waters-81626.herokuapp.com/

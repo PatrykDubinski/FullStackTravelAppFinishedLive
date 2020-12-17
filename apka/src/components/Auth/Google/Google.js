@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
+
 import * as queryString from "query-string";
-import * as actions from "../../../store/actions/index";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { TweenMax } from "gsap";
+
+import * as actions from "../../../store/actions/index";
 
 const Google = ({ onGoogleAuth, isAuth }) => {
   const blue = useRef(null);

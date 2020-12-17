@@ -1,10 +1,12 @@
-import * as queryString from "query-string";
 import React, { useState } from "react";
-import Form from "./Form/Form";
-import LoginForm from "./Login/LoginForm";
 import "./Register.css";
+
+import * as queryString from "query-string";
 import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Form from "./Form/Form";
+import LoginForm from "./Login/LoginForm";
 
 const Register = () => {
   const [loginForm, setLoginForm] = useState(false);

@@ -1,11 +1,12 @@
+import React, { useEffect, useState } from "react";
 import "./Map.css";
-import React, { useEffect } from "react";
-import { useState } from "react";
+
 import ReactMapGL, { Marker, NavigationControl, Popup } from "react-map-gl";
 import { connect } from "react-redux";
+import { Rating } from "@material-ui/lab";
+
 import AddPointModal from "./AddPointModal/AddPointModal";
 import Backdrop from "./Backdrop/Backdrop";
-import { Rating } from "@material-ui/lab";
 import * as actions from "../../../store/actions/index";
 import Loading from "../../UI/Loading/Loading";
 

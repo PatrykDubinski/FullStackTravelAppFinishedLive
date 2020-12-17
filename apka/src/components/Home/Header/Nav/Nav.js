@@ -1,5 +1,6 @@
 import React from "react";
 import "./Nav.css";
+
 import { connect } from "react-redux";
 
 import NavItem from "./NavItem/NavItem";

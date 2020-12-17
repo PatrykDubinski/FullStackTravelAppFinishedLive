@@ -1,3 +1,5 @@
+// Local Storage
+
 export const saveToLocalStorage = (state, stateName) => {
   try {
     const serialisedState = JSON.stringify(state);
@@ -17,6 +19,8 @@ export const loadFromLocalStorage = (stateName) => {
     return undefined;
   }
 };
+
+// Utility functions
 
 export const arrayBufferToBase64 = (buffer) => {
   var binary = "";

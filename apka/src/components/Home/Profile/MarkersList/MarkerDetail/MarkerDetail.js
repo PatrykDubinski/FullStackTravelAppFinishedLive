@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./MarkerDetail.css";
 
-import * as actions from "../../../../../store/actions/index";
 import { connect } from "react-redux";
 import { useHistory, useParams } from "react-router";
-import { arrayBufferToBase64 } from "../../../../../store";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Rating } from "@material-ui/lab";
 import ReactDatePicker from "react-datepicker";
+
+import * as actions from "../../../../../store/actions/index";
+import { arrayBufferToBase64 } from "../../../../../store";
 
 const MarkerDetail = React.memo(
   ({ onGetMarkerDetails, marker, onUpdateMarker, loading }) => {
@@ -143,7 +144,7 @@ const MarkerDetail = React.memo(
               </>
             )}
             <div className="img__wrapper">
-              <img src={myImage} />
+              <img src={myImage} alt="" />
             </div>
             {isEditing ? (
               <button onClick={() => saveEdit()}>Save</button>

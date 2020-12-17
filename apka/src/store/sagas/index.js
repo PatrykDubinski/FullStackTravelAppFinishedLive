@@ -1,5 +1,8 @@
-import * as actionTypes from "../actions/actionTypes";
+// Library imports
 import { takeEvery } from "redux-saga/effects";
+
+// My components imports
+import * as actionTypes from "../actions/actionTypes";
 import {
   checkLoginSaga,
   getUserDataSaga,
@@ -16,6 +19,8 @@ import {
   updateMarkerSaga,
 } from "./marker";
 
+// Auth sagas controller
+
 export function* watchAuth() {
   yield takeEvery(actionTypes.REGISTER_USER, registerSaga);
   yield takeEvery(actionTypes.LOGIN_USER, loginSaga);
@@ -24,6 +29,8 @@ export function* watchAuth() {
   yield takeEvery(actionTypes.GOOGLE_AUTH, googleAuthSaga);
   yield takeEvery(actionTypes.GET_USER_DATA, getUserDataSaga);
 }
+
+// Marker sagas controller
 
 export function* watchMarkers() {
   yield takeEvery(actionTypes.GET_MARKER_DETAILS, getMarkerDetails);

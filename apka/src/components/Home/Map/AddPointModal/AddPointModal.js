@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./AddPointModal.css";
+
 import { Rating } from "@material-ui/lab";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+
 import * as actions from "../../../../store/actions/index";
 
 const AddPointModal = ({

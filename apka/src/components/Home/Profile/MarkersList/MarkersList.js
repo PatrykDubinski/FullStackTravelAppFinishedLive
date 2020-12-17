@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "./MarkersList.css";
 
-import test from "../../../../assets/images/map.jpg";
-import * as actions from "../../../../store/actions/index";
 import { connect } from "react-redux";
 import { Rating } from "@material-ui/lab";
 import { Link } from "react-router-dom";
+
+import test from "../../../../assets/images/map.jpg";
+import * as actions from "../../../../store/actions/index";
 
 const MarkersList = ({
   onGetMarkers,

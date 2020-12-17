@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
 import "./Profile.css";
+
 import styled from "styled-components";
-import test from "../../../assets/images/map.jpg";
-import MarkersList from "./MarkersList/MarkersList";
-import FriendsList from "./FriendsList/FriendsList";
 import { connect } from "react-redux";
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import test from "../../../assets/images/map.jpg";
+import MarkersList from "./MarkersList/MarkersList";
+import FriendsList from "./FriendsList/FriendsList";
 
 const StyledProfileTop = styled.div`
   background: url("${(props) => props.bgImage}");

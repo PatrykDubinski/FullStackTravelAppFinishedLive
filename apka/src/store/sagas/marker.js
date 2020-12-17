@@ -1,12 +1,15 @@
-import * as actions from "../actions/index";
-import { put } from "redux-saga/effects";
+// Library imports
 import axios from "axios";
+import { put } from "redux-saga/effects";
+
+// My components imports
+import * as actions from "../actions/index";
 import { arrayBufferToBase64 } from "..";
 
 export function* updateMarkerSaga(action) {
   yield put(actions.updateMarkerStart());
   try {
-    const response = yield axios.patch(`/marker/${action.markerId}`, [
+    yield axios.patch(`/marker/${action.markerId}`, [
       {
         propName: "title",
         value: action.title,
@@ -48,7 +51,7 @@ export function* deleteMarkerSaga(action) {
   yield put(actions.deleteMarkerStart());
   const markerId = action.markerId;
   try {
-    const response = yield axios.delete(`/marker/delete`, {
+    yield axios.delete(`/marker/delete`, {
       data: {
         markerId,
       },
@@ -82,7 +85,7 @@ export function* addMarkerSaga(action) {
   yield put(actions.addMarkerStart());
   const data = action.data;
   try {
-    const response = yield axios.post(`/marker/add`, data);
+    yield axios.post(`/marker/add`, data);
     yield put(actions.addMarkerSuccess());
     yield put(actions.getMarkers(action.userId));
   } catch (error) {
