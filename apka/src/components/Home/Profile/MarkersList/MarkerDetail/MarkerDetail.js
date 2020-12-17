@@ -10,6 +10,7 @@ import ReactDatePicker from "react-datepicker";
 
 import * as actions from "../../../../../store/actions/index";
 import { arrayBufferToBase64 } from "../../../../../store";
+import Input from "../../../../UI/Input/Input";
 
 const MarkerDetail = React.memo(
   ({ onGetMarkerDetails, marker, onUpdateMarker, loading }) => {
@@ -96,18 +97,18 @@ const MarkerDetail = React.memo(
               <>
                 <strong>Title</strong>
                 <div className="input__wrapper">
-                  <input
-                    type="text"
+                  <Input
+                    required={false}
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    callback={(e) => setTitle(e)}
                   />
                 </div>
                 <strong>Description</strong>{" "}
                 <div className="input__wrapper">
-                  <input
-                    onChange={(e) => setDesc(e.target.value)}
-                    type="text"
+                  <Input
+                    required={false}
                     value={desc}
+                    callback={(e) => setDesc(e)}
                   />
                 </div>
                 <strong>From</strong>

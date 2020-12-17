@@ -7,12 +7,30 @@ import { connect } from "react-redux";
 
 // My components imports
 import Home from "./components/Home/Home";
-import Profile from "./components/Home/Profile/Profile";
-import MarkerDetail from "./components/Home/Profile/MarkersList/MarkerDetail/MarkerDetail";
-import Register from "./components/Auth/Register";
-import Logout from "./components/Auth/Login/Logout/Logout";
-import Google from "./components/Auth/Google/Google";
 import * as actions from "./store/actions/index";
+import asyncComponent from "./asyncComponent";
+
+const asyncProfile = asyncComponent(() => {
+  return import("./components/Home/Profile/Profile");
+});
+
+const asyncMarkerDetail = asyncComponent(() => {
+  return import(
+    "./components/Home/Profile/MarkersList/MarkerDetail/MarkerDetail"
+  );
+});
+
+const asyncRegister = asyncComponent(() => {
+  return import("./components/Auth/Register");
+});
+
+const asyncLogout = asyncComponent(() => {
+  return import("./components/Auth/Login/Logout/Logout");
+});
+
+const asyncGoogle = asyncComponent(() => {
+  return import("./components/Auth/Google/Google");
+});
 
 function App({ onTryAutoSignIn, isAuth, onGetUserData, userId }) {
   useEffect(() => {
@@ -26,21 +44,11 @@ function App({ onTryAutoSignIn, isAuth, onGetUserData, userId }) {
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/marker/:id">
-            <MarkerDetail />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/auth/google">
-            <Google />
-          </Route>
-          <Route path="/logout">
-            <Logout />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
+          <Route path="/marker/:id" component={asyncMarkerDetail} />
+          <Route path="/profile" component={asyncProfile} />
+          <Route path="/auth/google" component={asyncGoogle} />
+          <Route path="/logout" component={asyncLogout} />
+          <Route path="/register" component={asyncRegister} />
           <Route path="/">
             <Home />
           </Route>

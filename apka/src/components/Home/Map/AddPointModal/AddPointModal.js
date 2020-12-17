@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import * as actions from "../../../../store/actions/index";
+import Input from "../../../UI/Input/Input";
 
 const AddPointModal = ({
   marker,
@@ -75,22 +76,20 @@ const AddPointModal = ({
       >
         <label htmlFor="title">Title</label>
         <div>
-          <input
-            type="text"
-            name="title"
+          <Input
+            required={true}
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
+            callback={(e) => setTitle(e)}
+            name="title"
           />
         </div>
         <label htmlFor="desc">Description</label>
         <div>
-          <input
-            type="text"
-            name="desc"
+          <Input
+            required={true}
             value={desc}
-            onChange={(e) => setDesc(e.target.value)}
-            required
+            callback={(e) => setDesc(e)}
+            name="desc"
           />
         </div>
         <label htmlFor="rating">Rating</label>

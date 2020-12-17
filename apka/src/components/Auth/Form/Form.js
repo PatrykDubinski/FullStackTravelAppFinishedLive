@@ -4,6 +4,7 @@ import "./Form.css";
 import { connect } from "react-redux";
 
 import * as actions from "../../../store/actions/index";
+import Input from "../../UI/Input/Input";
 
 const Form = ({ onRegister, error, loading, setLoginForm }) => {
   const [firstName, setFirstName] = useState("");
@@ -41,49 +42,46 @@ const Form = ({ onRegister, error, loading, setLoginForm }) => {
       <div className="names">
         <div className="names__box">
           <label htmlFor="first-name">First Name</label>
-          <input
-            required
+          <Input
+            required={true}
             value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            type="text"
+            callback={(e) => setFirstName(e)}
             name="first-name"
             placeholder="Your first name"
           />
         </div>
         <div className="names__box">
           <label htmlFor="last-name">Last Name</label>
-          <input
-            required
+          <Input
+            required={true}
             value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            type="text"
+            callback={(e) => setLastName(e)}
             name="last-name"
             placeholder="Your last name"
           />
         </div>
       </div>
       <label htmlFor="nick">Nickname</label>
-      <input
+      <Input
         className="nickname"
-        type="text"
-        required
+        required={true}
         value={nickname}
-        onChange={(e) => setNickname(e.target.value)}
+        callback={(e) => setNickname(e)}
         placeholder="Enter your nickname"
       />
       <label htmlFor="email">E-mail</label>
-      <input
-        required
+      <Input
+        required={true}
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        callback={(e) => setEmail(e)}
         type="email"
         placeholder="Enter your email"
       />
       <label htmlFor="password">Password</label>
-      <input
-        required
+      <Input
+        required={true}
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        callback={(e) => setPassword(e)}
         type="password"
         placeholder="Enter your password"
       />

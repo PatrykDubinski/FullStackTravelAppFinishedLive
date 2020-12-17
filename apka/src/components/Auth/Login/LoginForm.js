@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 import { connect } from "react-redux";
 
 import * as actions from "../../../store/actions/index";
+import Input from "../../UI/Input/Input";
 
 const LoginForm = ({ loading, error, onLogin, isAuth }) => {
   const history = useHistory();
@@ -30,18 +31,18 @@ const LoginForm = ({ loading, error, onLogin, isAuth }) => {
         </div>
       )}
       <label htmlFor="email">E-mail</label>
-      <input
+      <Input
         required
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        callback={(e) => setEmail(e)}
         type="email"
         placeholder="Enter your email"
       />
       <label htmlFor="password">Password</label>
-      <input
+      <Input
         required
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        callback={(e) => setPassword(e)}
         type="password"
         placeholder="Enter your password"
       />
