@@ -5,7 +5,7 @@ import mapImg from "../../../assets/images/map.jpg";
 
 const Greetings = () => {
   return (
-    <section className="greetings">
+    <section className="greetings" data-test="greetings">
       <div className="greetings__left">
         <h1>Make your memories alive!</h1>
         <p>
@@ -16,7 +16,7 @@ const Greetings = () => {
         </p>
         <h3>Have fun posting!</h3>
       </div>
-      <div className="greetings__right">
+      <div className="greetings__right" data-test="greetings__right">
         <img src={mapImg} alt="map" />
       </div>
     </section>
