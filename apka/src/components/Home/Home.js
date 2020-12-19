@@ -12,7 +12,7 @@ import Map from "./Map/Map";
 
 const Home = ({ isAuth }) => {
   return (
-    <div>
+    <div data-test="home">
       <Header />
       {!isAuth ? (
         <>
