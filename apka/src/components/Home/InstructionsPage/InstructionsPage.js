@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const InstructionsPage = () => {
   return (
-    <section className="instructionsPage">
+    <section className="instructionsPage" data-test="instructionsPage">
       <div className="instructionsPage__step step-1">
         <p>
           First you have to register your account to keep track of your travels.
