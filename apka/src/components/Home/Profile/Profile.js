@@ -42,8 +42,6 @@ const Profile = React.memo(({ user }) => {
     console.log(e.target.id);
   };
 
-  console.log(user);
-
   return (
     <>
       <Header profile={true} />

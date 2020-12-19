@@ -95,7 +95,6 @@ const getUserDataStart = (state, action) => {
 };
 
 const getUserDataSuccess = (state, action) => {
-  console.log(action);
   return {
     ...state,
     loading: false,

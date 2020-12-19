@@ -15,7 +15,6 @@ export const loadFromLocalStorage = (stateName) => {
     if (serialisedState === null) return undefined;
     return JSON.parse(serialisedState);
   } catch (error) {
-    console.log(error);
     return undefined;
   }
 };

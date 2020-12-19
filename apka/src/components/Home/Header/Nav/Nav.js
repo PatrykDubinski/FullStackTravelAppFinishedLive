@@ -9,9 +9,9 @@ import NavItem from "./NavItem/NavItem";
 const Nav = React.memo(
   ({ authLoading, markerLoading, isAuth, profile }) => {
     return (
-      <nav className="nav">
+      <nav className="nav" data-test="navComponent">
         {authLoading || markerLoading ? null : (
-          <ul className="nav__list">
+          <ul className="nav__list" data-test="nav-list">
             {!isAuth ? (
               <NavItem path="register">Authorization</NavItem>
             ) : (
@@ -39,7 +39,6 @@ const Nav = React.memo(
 const mapStateToProps = (state) => {
   return {
     isAuth: state.auth.token != null,
-    userEmail: state.auth.userEmail,
     authLoading: state.auth.loading,
     markerLoading: state.marker.loading,
   };

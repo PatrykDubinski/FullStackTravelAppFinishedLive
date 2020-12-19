@@ -23,10 +23,18 @@ const composeEnhancers =
 const sagaMiddleware = createSagaMiddleware();
 
 // Store
-const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(sagaMiddleware))
-);
+// const store = createStore(
+//   rootReducer,
+//   composeEnhancers(applyMiddleware(sagaMiddleware))
+// );
+
+const middlewares = [sagaMiddleware];
+
+const createStoreWithMiddleware = composeEnhancers(
+  applyMiddleware(...middlewares)
+)(createStore);
+
+const store = createStoreWithMiddleware(rootReducer);
 
 // Sagas
 sagaMiddleware.run(watchAuth);

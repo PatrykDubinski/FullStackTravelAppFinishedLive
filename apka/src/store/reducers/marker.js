@@ -104,7 +104,6 @@ const getMarkerDetailsStart = (state, action) => {
 };
 
 const getMarkerDetailsSuccess = (state, action) => {
-  console.log(action);
   return {
     ...state,
     loading: false,
