@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
 
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -40,6 +41,8 @@ const Profile = React.memo(({ user }) => {
   const editField = (e) => {
     console.log(e.target.id);
   };
+
+  console.log(user);
 
   return (
     <>
@@ -153,6 +156,15 @@ const mapStateToProps = (state) => {
   return {
     user: state.auth.user,
   };
+};
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    email: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    nickname: PropTypes.string,
+  }),
 };
 
 export default connect(mapStateToProps)(Profile);

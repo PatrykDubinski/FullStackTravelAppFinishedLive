@@ -1,6 +1,8 @@
 import React from "react";
 import "./Header.css";
 
+import PropTypes from "prop-types";
+
 import { ReactComponent as Logo } from "../../../assets/images/logo.svg";
 import Nav from "./Nav/Nav";
 
@@ -15,5 +17,9 @@ const Header = React.memo(({ profile }) => {
     </div>
   );
 });
+
+Header.propTypes = {
+  profile: PropTypes.bool,
+};
 
 export default Header;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import * as actions from "../../../store/actions/index";
@@ -107,6 +108,13 @@ const mapDispatchToProps = (dispatch) => {
         actions.register(firstName, lastName, nickname, email, password)
       ),
   };
+};
+
+Form.propTypes = {
+  onRegister: PropTypes.func,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+  setLoginForm: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

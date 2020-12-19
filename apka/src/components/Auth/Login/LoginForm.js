@@ -3,6 +3,7 @@ import "./LoginForm.css";
 
 import { useHistory } from "react-router";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import * as actions from "../../../store/actions/index";
 import Input from "../../UI/Input/Input";
@@ -69,6 +70,13 @@ const mapDispatchToProps = (dispatch) => {
     onLogin: (email, password, history) =>
       dispatch(actions.login(email, password, history)),
   };
+};
+
+LoginForm.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  onLogin: PropTypes.func,
+  isAuth: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

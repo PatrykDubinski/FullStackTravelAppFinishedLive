@@ -4,6 +4,7 @@ import * as queryString from "query-string";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { TweenMax } from "gsap";
+import PropTypes from "prop-types";
 
 import * as actions from "../../../store/actions/index";
 
@@ -65,6 +66,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onGoogleAuth: (code) => dispatch(actions.googleAuth(code)),
   };
+};
+
+Google.propTypes = {
+  onGoogleAuth: PropTypes.func,
+  isAuth: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Google);

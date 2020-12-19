@@ -1,5 +1,7 @@
 import React from "react";
 
+import PropTypes from "prop-types";
+
 const Input = ({
   type = "text",
   value,
@@ -20,6 +22,16 @@ const Input = ({
       onChange={({ target: { value } }) => callback(value)}
     />
   );
+};
+
+Input.propTypes = {
+  type: PropTypes.string,
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  className: PropTypes.string,
+  name: PropTypes.string,
+  callback: PropTypes.func,
 };
 
 export default Input;

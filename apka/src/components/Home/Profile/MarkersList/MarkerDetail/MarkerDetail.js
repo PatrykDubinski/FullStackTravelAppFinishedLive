@@ -7,6 +7,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Rating } from "@material-ui/lab";
 import ReactDatePicker from "react-datepicker";
+import PropTypes from "prop-types";
 
 import * as actions from "../../../../../store/actions/index";
 import { arrayBufferToBase64 } from "../../../../../store";
@@ -179,6 +180,30 @@ const mapDispatchToProps = (dispatch) => {
         actions.updateMarker(title, desc, startDate, endDate, rating, markerId)
       ),
   };
+};
+
+MarkerDetail.propTypes = {
+  onGetMarkerDetails: PropTypes.func,
+  marker: PropTypes.shape({
+    createdAt: PropTypes.string,
+    desc: PropTypes.string,
+    endDate: PropTypes.string,
+    id: PropTypes.string,
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+    rating: PropTypes.number,
+    startDate: PropTypes.string,
+    title: PropTypes.string,
+    photo: PropTypes.shape({
+      contentType: PropTypes.string,
+      data: PropTypes.shape({
+        type: PropTypes.string,
+        data: PropTypes.arrayOf(PropTypes.number),
+      }),
+    }),
+  }),
+  onUpdateMarker: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MarkerDetail);

@@ -2,6 +2,7 @@ import React from "react";
 import "./Nav.css";
 
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import NavItem from "./NavItem/NavItem";
 
@@ -42,6 +43,13 @@ const mapStateToProps = (state) => {
     authLoading: state.auth.loading,
     markerLoading: state.marker.loading,
   };
+};
+
+Nav.propTypes = {
+  authLoading: PropTypes.bool,
+  markerLoading: PropTypes.bool,
+  isAuth: PropTypes.bool,
+  profile: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(Nav);

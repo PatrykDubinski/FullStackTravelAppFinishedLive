@@ -4,6 +4,7 @@ import { useEffect } from "react";
 // Library imports
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 // My components imports
 import Home from "./components/Home/Home";
@@ -72,6 +73,13 @@ const mapDispatchToProps = (dispatch) => {
     onTryAutoSignIn: () => dispatch(actions.loginCheck()),
     onGetUserData: (userId) => dispatch(actions.getUserData(userId)),
   };
+};
+
+App.propTypes = {
+  onTryAutoSignIn: PropTypes.func,
+  isAuth: PropTypes.bool,
+  onGetUserData: PropTypes.func,
+  userId: PropTypes.string,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

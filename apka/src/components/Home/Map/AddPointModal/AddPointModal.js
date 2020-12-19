@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import * as actions from "../../../../store/actions/index";
 import Input from "../../../UI/Input/Input";
@@ -150,6 +151,18 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onAddMarker: (data, userId) => dispatch(actions.addMarker(data, userId)),
   };
+};
+
+AddPointModal.propTypes = {
+  marker: PropTypes.shape({
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+  }),
+  userId: PropTypes.string,
+  closeModal: PropTypes.func,
+  onAddMarker: PropTypes.func,
+  markerError: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddPointModal);

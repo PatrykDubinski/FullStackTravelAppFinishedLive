@@ -4,6 +4,7 @@ import "./MarkersList.css";
 import { connect } from "react-redux";
 import { Rating } from "@material-ui/lab";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import test from "../../../../assets/images/map.jpg";
 import * as actions from "../../../../store/actions/index";
@@ -12,7 +13,6 @@ const MarkersList = ({
   onGetMarkers,
   userId,
   markers,
-  images,
   onDeleteMarker,
   loading,
 }) => {
@@ -102,6 +102,33 @@ const mapDispatchToProps = (dispatch) => {
     onGetMarkers: (userId) => dispatch(actions.getMarkers(userId)),
     onDeleteMarker: (markerId) => dispatch(actions.deleteMarker(markerId)),
   };
+};
+
+MarkersList.propTypes = {
+  onGetMarkers: PropTypes.func,
+  userId: PropTypes.string,
+  markers: PropTypes.arrayOf(
+    PropTypes.shape({
+      createdAt: PropTypes.string,
+      desc: PropTypes.string,
+      endDate: PropTypes.string,
+      id: PropTypes.string,
+      latitude: PropTypes.number,
+      longitude: PropTypes.number,
+      rating: PropTypes.number,
+      startDate: PropTypes.string,
+      title: PropTypes.string,
+      photo: PropTypes.shape({
+        contentType: PropTypes.string,
+        data: PropTypes.shape({
+          type: PropTypes.string,
+          data: PropTypes.arrayOf(PropTypes.number),
+        }),
+      }),
+    })
+  ),
+  onDeleteMarker: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MarkersList);

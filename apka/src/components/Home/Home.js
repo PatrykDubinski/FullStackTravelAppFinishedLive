@@ -1,6 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import Footer from "./Footer/Footer";
 import Greetings from "./Greetings/Greetings";
@@ -31,6 +32,10 @@ const mapStateToProps = (state) => {
   return {
     isAuth: state.auth.token !== null,
   };
+};
+
+Home.propTypes = {
+  isAuth: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(Home);
