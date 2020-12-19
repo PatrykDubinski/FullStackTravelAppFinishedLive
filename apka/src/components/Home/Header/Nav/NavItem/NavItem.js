@@ -16,7 +16,11 @@ const NavItem = ({ path, children }) => {
   };
 
   return (
-    <li onClick={() => onNavClick(path)} className="navItem">
+    <li
+      onClick={() => onNavClick(path)}
+      className="navItem"
+      data-test="navItem"
+    >
       {children}
     </li>
   );
