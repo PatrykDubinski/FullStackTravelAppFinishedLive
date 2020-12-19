@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" data-test="footer">
       <p>Created by Patryk Dubiński. &copy; All rights reserved 2020</p>
     </footer>
   );
