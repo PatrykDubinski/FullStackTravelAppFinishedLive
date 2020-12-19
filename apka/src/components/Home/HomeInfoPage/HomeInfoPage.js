@@ -5,10 +5,10 @@ import { ReactComponent as Travel } from "../../../assets/images/travel.svg";
 
 const HomeInfoPage = () => {
   return (
-    <section className="homeInfoPage">
+    <section className="homeInfoPage" data-test="homeInfoPage">
       <h1>We all love travelling!</h1>
       <article className="homeInfoPage__wrapper">
-        <div className="homeInfoPage__left">
+        <div className="homeInfoPage__left" data-test="homeInfoPage__left">
           <Travel />
         </div>
         <div className="homeInfoPage__right">
