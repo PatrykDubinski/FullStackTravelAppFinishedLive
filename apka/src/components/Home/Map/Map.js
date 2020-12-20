@@ -48,8 +48,9 @@ const Map = ({ userId, onGetMarkers, markers, images, loading }) => {
   return loading ? (
     <Loading />
   ) : (
-    <div className="map">
+    <div className="map" data-test="map">
       <ReactMapGL
+        date-test="react-map"
         mapStyle="mapbox://styles/kreo/ckhmbr9wu0ygq19pogl52cfvn"
         mapboxApiAccessToken="pk.eyJ1Ijoia3JlbyIsImEiOiJja2g4eGpybzgweXhhMndvNTZqYzNwa2w5In0.sud1ozthViKFqwHTyG1PBA"
         {...viewport}
@@ -112,7 +113,11 @@ const Map = ({ userId, onGetMarkers, markers, images, loading }) => {
         ))}
         {showModal ? (
           <>
-            <Backdrop show={showModal} closeHandler={closeModal} />
+            <Backdrop
+              data-test="backdrop"
+              show={showModal}
+              closeHandler={closeModal}
+            />
             <Marker
               longitude={marker.longitude}
               latitude={marker.latitude}
@@ -138,7 +143,10 @@ const Map = ({ userId, onGetMarkers, markers, images, loading }) => {
             />
           </>
         ) : null}
-        <div style={{ position: "absolute", right: "5px", bottom: "25px" }}>
+        <div
+          data-test="controls"
+          style={{ position: "absolute", right: "5px", bottom: "25px" }}
+        >
           <NavigationControl />
         </div>
       </ReactMapGL>
