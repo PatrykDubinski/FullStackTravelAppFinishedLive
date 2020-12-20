@@ -2,7 +2,7 @@ import React from "react";
 
 import { shallow } from "enzyme";
 // import Adapter from "enzyme-adapter-react-16";
-import ReactMapGL, { Marker } from "react-map-gl";
+import ReactMapGL from "react-map-gl";
 import { act } from "react-test-renderer";
 import Enzyme from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
@@ -69,8 +69,10 @@ describe("<Map /> Component", () => {
 
   it("Should render Navigation Controls", async () => {
     const initialState = {
-      loading: false,
-      markers: [{ title: "marker1", desc: "marker1" }],
+      marker: {
+        loading: false,
+        markers: [{ title: "marker1", desc: "marker1" }],
+      },
     };
     const props = {
       showModal: true,

@@ -4,7 +4,15 @@ import "./Backdrop.css";
 import PropTypes from "prop-types";
 
 const Backdrop = ({ show, closeHandler }) => {
-  return show && <div className="background" onClick={closeHandler}></div>;
+  return (
+    show && (
+      <div
+        data-test="backdrop"
+        className="background"
+        onClick={closeHandler}
+      ></div>
+    )
+  );
 };
 
 Backdrop.propTypes = {
