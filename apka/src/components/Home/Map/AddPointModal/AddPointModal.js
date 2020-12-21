@@ -68,8 +68,15 @@ const AddPointModal = ({
   };
 
   return (
-    <div className={`addPointModal ${show && "open"}`}>
-      {loading && <div className="loader">Loading...</div>}
+    <div
+      data-test="addPointModal"
+      className={`addPointModal ${show && "open"}`}
+    >
+      {loading && (
+        <div data-test="loading" className="loader">
+          Loading...
+        </div>
+      )}
       <h2>Save your point!</h2>
       <form
         onSubmit={(e) => handleMarkerSubmit(e)}
