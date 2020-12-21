@@ -1,7 +1,6 @@
 import React from "react";
 
 import { shallow, configure } from "enzyme";
-import { act } from "react-test-renderer";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import {
   checkProps,
@@ -56,6 +55,24 @@ describe("<AddPointModal /> Component", () => {
     const component = setUp(initialState, expectedProps);
     const wrapper = findByDataAttr(component, "loading");
     expect(wrapper.length).toBe(1);
+  });
+
+  it("Should have class open when show state is true", () => {
+    const expectedProps = {
+      marker: {
+        longitude: 15,
+        latitude: 25,
+      },
+    };
+    const initialState = {};
+    const component = setUp(initialState, expectedProps);
+    const setShow = jest.fn();
+    jest.spyOn(React, "useState").mockImplementation((show) => [show, setShow]);
+    jest.spyOn(React, "useEffect").mockImplementation((f) => f());
+    const wrapper = findByDataAttr(component, "addPointModal");
+    component.update();
+    expect(setShow).toHaveBeenCalledWith(true);
+    expect(component.update().hasClass("show")).toBe(true);
   });
 });
 

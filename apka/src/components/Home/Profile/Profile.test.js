@@ -7,7 +7,7 @@ import {
   checkProps,
   findByDataAttr,
   testStore,
-} from "../../../../Utilities/testUtils";
+} from "../../../Utilities/testUtils";
 import Profile from "./Profile";
 
 configure({ adapter: new Adapter() });
@@ -19,3 +19,25 @@ const setUp = (initialState = {}, props = {}) => {
     .dive();
   return component;
 };
+
+describe("<Profile /> Component", () => {
+  it("Should render without any errors", () => {
+    const component = setUp();
+    expect(component.exists()).toBe(true);
+  });
+});
+
+describe("Checking PropTypes in <Profile />", () => {
+  it("Should not throw any warning", () => {
+    const expectedProps = {
+      user: {
+        email: "email",
+        firstName: "imie",
+        lastName: "nazwisko",
+        nickname: "nick",
+      },
+    };
+    const propsError = checkProps(Profile, expectedProps);
+    expect(propsError).toBeUndefined();
+  });
+});
